@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Foundry AI Data Contract",
+  "description": "Database schema produced by the Database Agent. All agents must comply with this contract.",
+  "version": "1.0.0",
+  "project_name": "",
+  "entities": [
+    {
+      "name": "example_entity",
+      "table_name": "example_entities",
+      "description": "An example entity",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "primary_key": true,
+          "nullable": false,
+          "description": "Unique identifier"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "nullable": false,
+          "default": "now()",
+          "description": "Creation timestamp"
+        }
+      ],
+      "relationships": [],
+      "indexes": []
+    }
+  ],
+  "enums": [],
+  "metadata": {
+    "generated_by": "DatabaseAgent",
+    "generated_at": "",
+    "schema_version": "1.0.0"
+  }
+}
