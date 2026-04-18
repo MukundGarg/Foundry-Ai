@@ -1,0 +1,30 @@
+services:
+  # ── Backend on Render ────────────────────────────────────────────────────────
+  - type: web
+    name: foundry-ai-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_HOST
+        value: "0.0.0.0"
+      - key: APP_PORT
+        value: "8000"
+      - key: WORKERS
+        value: "2"
+      - key: LOG_LEVEL
+        value: info
+      - key: CORS_ORIGINS
+        sync: false   # Set in Render dashboard — your Vercel URL
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
